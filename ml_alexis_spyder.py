@@ -4,7 +4,6 @@ Created on Sat Apr  2 11:43:01 2022
 
 @author: ctesc
 """
-htryhthyrthty
 import warnings
 import numpy as np
 import pandas as pd
@@ -25,7 +24,7 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import accuracy_score
 warnings.filterwarnings('ignore')
 
-os.chdir('C:/Users/ctesc/OneDrive/Desktop/ml_alexis')
+#os.chdir('C:/Users/ctesc/OneDrive/Desktop/ml_alexis')
 #pd.set_option('display.max_row', 100)
 pd.set_option('display.max_column', 200) #allow to display 200 columns of the dataset: useful to see all features
 
