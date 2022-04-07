@@ -28,10 +28,13 @@ warnings.filterwarnings('ignore')
 #pd.set_option('display.max_row', 100)
 pd.set_option('display.max_column', 200) #allow to display 200 columns of the dataset: useful to see all features
 
+#---------------------------------------------------------------------------------------------------------------
+# Lecture des donnees entrees 
+
 data=pd.read_csv('DonneesNormalisees_Voxels_spectres.csv', sep = ';')
 source = data['Source (MeV)']
 voxels = data['Voxels']
-encoder = LabelEncoder()
+encoder = LabelEncoder() # Convertion donnees string en data en nombre
 source_tr = encoder.fit_transform(source)
 voxels_tr = encoder.fit_transform(voxels)
 source_tr = source_tr.reshape((len(source_tr), 1))
