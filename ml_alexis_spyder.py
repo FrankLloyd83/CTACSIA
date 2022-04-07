@@ -29,11 +29,15 @@ warnings.filterwarnings('ignore')
 pd.set_option('display.max_column', 200) #allow to display 200 columns of the dataset: useful to see all features
 
 #---------------------------------------------------------------------------------------------------------------
-# Lecture des donnees entrees 
+# Lecture donnees entrees 
 
 data=pd.read_csv('DonneesNormalisees_Voxels_spectres.csv', sep = ';')
 source = data['Source (MeV)']
 voxels = data['Voxels']
+
+#---------------------------------------------------------------------------------------------------------------
+# Mise en forme des donnees
+
 encoder = LabelEncoder() # Convertion donnees string en data en nombre
 source_tr = encoder.fit_transform(source)
 voxels_tr = encoder.fit_transform(voxels)
@@ -61,6 +65,9 @@ for i in range(0, len(y)):
 dummy_y = np_utils.to_categorical(y)
 X_train, X_test, y_train, y_test = train_test_split(X, dummy_y, test_size=.2)
 
+#---------------------------------------------------------------------------------------------------------------
+# Model entrainement
+
 def baseline_model():
     model=Sequential()
     model.add(Dense(8, input_shape=(X.shape[1],), activation = 'relu'))
@@ -75,6 +82,11 @@ def baseline_model():
 model = baseline_model()
 history = model.fit(X_train, y_train, epochs=4000, batch_size=64, 
 validation_data=(X_test, y_test), shuffle=True, verbose=1)
+
+
+#---------------------------------------------------------------------------------------------------------------
+# Analyse resultats
+
 metrics = pd.DataFrame(history.history['loss'], columns=['train_loss'])
 metrics['val_loss'] = history.history['val_loss']
 metrics['train_acc'] = history.history['accuracy']
