@@ -5,9 +5,9 @@ Created on Sat Apr  2 11:43:01 2022
 @author: ctesc
 """
 ##### VARIABLES A MODIFIER ######
-reset = False
-nb_hidden = 8
-epochs = 100
+reset = False # Reset reseau neuronnes
+nb_hidden = 8 # Nombre neuronnes couche cachee
+epochs = 100  # Nombre de batch d entrainement des poids
 
 import warnings
 import numpy as np
