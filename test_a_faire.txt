@@ -1,0 +1,10 @@
+TESTS A FAIRE POUR CTACRIA
+
+1 - tester le modele sur l'ensemble des donnees
+2 - nombre de neurones couche cachée (8 actuellement) : 2, 4, 16
+3 - ensemble de toutes les donnees : raies mono, cylindres/ellipsoides
+4 - donnees de taux de capture uniquement
+5 - donnees non normalisees (taux de catpure bruts)
+6 - simuler bruit avec loi uniforme
+7 - augmenter learning rate (0.001, 0.005...)
+8 - ne pas utiliser batch_size
