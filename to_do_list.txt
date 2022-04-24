@@ -1,3 +1,9 @@
+Objectif final :
+
+Créer programme python incluant le réseau neuronal qui permet de prendre uniquement les données morphologiques (M1A-M1C_M1E) et les taux de captures non formalisés
+
+
+
 TESTS A FAIRE POUR CTACRIA
 
 1 - tester le modele sur l'ensemble des donnees
@@ -8,3 +14,4 @@ TESTS A FAIRE POUR CTACRIA
 6 - simuler bruit avec loi uniforme
 7 - augmenter learning rate (0.001, 0.005...)
 8 - ne pas utiliser batch_size
+
