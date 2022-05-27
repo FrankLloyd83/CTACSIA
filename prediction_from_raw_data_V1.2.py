@@ -49,4 +49,18 @@ dffloat = df.select_dtypes('float') #selection des taux de captures
 df['Moyenne'   ] = np.mean(dffloat, axis=1)
 df['EcartType'] = np.std(dffloat,  axis=1)
 
+encoder = LabelEncoder()
+morpho = encoder.fit_transform(np.array(df.Morpho)).reshape((len(df.Morpho),1))
 
+X = np.concatenate([morpho,
+                    np.array(df['314']).reshape((len(df.Morpho),1)),
+                    np.array(df['324']).reshape((len(df.Morpho),1)),
+                    np.array(df['334']).reshape((len(df.Morpho),1)),
+                    np.array(df['344']).reshape((len(df.Morpho),1)),
+                    np.array(df['354']).reshape((len(df.Morpho),1)),
+                    np.array(df['364']).reshape((len(df.Morpho),1)),
+                    np.array(df.Moyenne).reshape((len(df.Morpho),1)),
+                    np.array(df.EcartType).reshape((len(df.Morpho),1))],
+                   axis=1) 
+
+model = keras.models.load_model('model_8/model_8_save')
