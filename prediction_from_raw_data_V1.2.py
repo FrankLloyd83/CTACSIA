@@ -47,6 +47,6 @@ for i in configuration.keys() : #ajout de colonnes dans dataframe par tally
 
 dffloat = df.select_dtypes('float') #selection des taux de captures
 df['Moyenne'   ] = np.mean(dffloat, axis=1)
-df['Ecart-type'] = np.std(dffloat,  axis=1)
+df['EcartType'] = np.std(dffloat,  axis=1)
 
 
