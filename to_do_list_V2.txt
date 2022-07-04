@@ -1,0 +1,11 @@
+Objectif final :
+
+Créer programme python incluant le réseau neuronal qui permet de prendre uniquement les données morphologiques (M1A-M1C_M1E) et les taux de captures non formalisés
+
+
+TESTS A FAIRE POUR CTACRIA
+
+1 - Créer un nouveau script pour tester de nouvelles valeurs après entrainement
+1 - nombre de neurones couche cachée (8 actuellement) : 2, 4, 16
+2 - donnees non normalisees (taux de catpure bruts)
+3 - simuler bruit avec loi uniforme
